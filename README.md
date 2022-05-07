@@ -50,7 +50,7 @@ Use the **CAF Landing Zones** approach:
 - When you have dependencies between discrete Terraform deployments and therefore need access to resource details contained within remote Terraform tfstates.
 
 ---
-# Note from author
+## Note from author
 The reason this guide exists is solely due to the difficulties I personally had trying to absorb all the concepts necessary when using the walkthrough which (attempts to) show you how to deploy the most complex pre-built scenario available in this repository.  There are many Azure & Azure AD high privileged access requirements, over a dozen deployment steps with multiple parameters, each of which must executed in a certain order (order is not always clear in the walkthrough), with minimal context provided regarding what each step is doing or how it's doing it.  Perhaps most significantly, the entire walkthrough can require many hours worth of effort and, when mostly deployed, the daily costs are not insignificant if your intention is only to learn this framework for future enterprise use.
 
 The power of this framework, in my opinion, is in its ability to manage and share state across multiple discrete Terraform deployments, along with the ability to reference both local and remote resource via dictionary key reference.  To that end, I found myself repeatedly asking the same question:  How do I use this framework with as few deployments possible to be able to leverage and demonstrate the state sharing capabilities?
