@@ -152,7 +152,7 @@ Before we start, if you did not create a configuration folder previously, create
 > **Levels Hierarchy:**
 If you refer to the documentation related to **levels hierarchy** at https://aztfmod.github.io/documentation/docs/fundamentals/lz-intro, you will see that level0 through level2 is generally reserved for the Platform Landing Zone configuration.  With that in mind, we need to create a **level3** folder at "`/tf/caf/configuration/level3`", then subdirectories for `testconfig1` and `testconfig2`.
 
-### **"test" deployment** ###
+### **testconfig1 deployment** ###
 Beginning with **testconfig1**, create a file named **configuration.tfvars** at "`/tf/caf/configuration/level3/testconfig1/configuration.tfvars`".  Insert the following content:
 
 ```js
@@ -283,7 +283,7 @@ To deploy these resources, we execute the following **Rover** command:
 
 That's it for our first deployment: **testconfig1**
 
-### **"testconfig2" deployment** ###
+### **testconfig2 deployment** ###
 
 Create a file named **configuration.tfvars** at "`/tf/caf/configuration/level3/testconfig2/configuration.tfvars`".  Copy the following code into the file:
 
