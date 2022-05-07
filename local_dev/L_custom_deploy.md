@@ -69,7 +69,7 @@ rover logout
 As a last step prior to deploying the **launchpad**, I recommend that you look at the contents of its `configuration.tfvars` file, which can be found at `/tf/caf/landingzones/caf_launchpad/scenario/100/configuration.tfvars`.  Take notice that the **landingzone** map object contains only three properties, none of which is named tfstate.  The significance of this will become more apparent as we move forward.
 
 **landingzone** map object from **launchpad configuration.tfvars**
-```json
+```
 landingzone = {
   backend_type = "azurerm"
   level        = "level0"
