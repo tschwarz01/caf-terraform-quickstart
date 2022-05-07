@@ -35,7 +35,7 @@ The purpose of this repository is to provide you with a set of pre-built templat
 | ansible         | Contains the Ansible playbook configuration files which are used to generate solution definition files for more complex scenarios, such as the CAF Platform Landing Zones and custom landing zones.
 | asvm            | Short for Azure Subscription Virtual Machine.  This directory contains one solution example, named Orion, containing the Ansible playbook files needed for generating a custom landing zone.
 | platform        | Contains the full YAML based definition files for the CAF Platform Landing Zone scenario.  Also contains Jinja resource templates needed by the YAML definition files.
-| resources       | Contains the Jinja definition files for a variety of Azure resource types.  These files are used to transform the environment YAML definitions into Terraform tfvar input files.
+| resources       | Contains the Jinja resource template files for a variety of Azure resource types.  These files are used to transform the environment YAML definitions into Terraform tfvar input files.
 
 We will be using a small subset of content within the `/tf/caf/landingzones` directory tree for our first custom deployment.
 
