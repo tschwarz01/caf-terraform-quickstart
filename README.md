@@ -1,6 +1,6 @@
 # Foundations
 
-## Components of the Azure CAF Terraform Solution
+## The Azure CAF Terraform Solution Components
 ---
 
 ### [Aztfmod Repository](https://github.com/aztfmod/terraform-azurerm-caf)
@@ -22,14 +22,34 @@
 - Is available on [Docker Hub as a standalone image](https://hub.docker.com/r/aztfmod/rover/tags?page=1&ordering=last_updated), or as a [Pipeline agent](https://hub.docker.com/r/aztfmod/rover-agent) which supports Azure DevOps, GitHub Actions, Gitlab & Terraform Cloud/Terraform Enterprise.
 
 
-## [CAF Platform Starter Kit Repository](https://github.com/Azure/caf-terraform-landingzones-platform-starter)
+### [CAF Platform Starter Kit Repository](https://github.com/Azure/caf-terraform-landingzones-platform-starter)
 - The platform starter project is an empty development environment which comes preloaded with all the utilities needed for deploying landing zones at scale.
 
-## [CAF Landing Zones Repository](https://github.com/Azure/caf-terraform-landingzones)
+### [CAF Landing Zones Repository](https://github.com/Azure/caf-terraform-landingzones)
 - Contains full solution accelerators, individual templates, Ansible playbooks and example CICD pipeline configuration tasks.
 
+## Component Interactions
+---
 
-## Note from author
+The Terraform modules, git repositories and CLI utilities outlined above are primarily used in one of two ways.
+
+### **standalone** mode
+
+This approach, which directly utilizes only the Terraform CAF Supermodule, will be most familiar to Terraform developers who have experience working with the Terraform azurerm module.
+
+Use the **standalone** approach:
+- As a learning resource on how composition differs between the Terraform CAF Supermodule and the Terraform azurerm module.
+- Performing local development of relatively simple Azure deployments targeting a single Azure subscription.
+
+### **CAF Landing Zones** mode
+
+With this approach, we leverage the **Platform Starter Kit** to provide us with the Docker development environment and version controlled tooling.  Generally, we combine the **Platform Starter Kit** with the **Landing Zones Repository** via cloning the latter repository into our Docker development environment.  Lastly, we use a variety of tools, including the **rover cli**, to customize and deploy the pre-built CAF Platform Landing Zones, as well as any additional custom landing zones we define.
+
+Use the **CAF Landing Zones** approach:
+- To create, manage and deploy complex multi-deployment configurations.
+- When you have dependencies between discrete Terraform deployments and therefore need access to resource details contained within remote Terraform tfstates.
+
+# Note from author
 ---
 The reason this guide exists is solely due to the difficulties I personally had trying to absorb all the concepts necessary when using the walkthrough which (attempts to) show you how to deploy the most complex pre-built scenario available in this repository.  There are many Azure & Azure AD high privileged access requirements, over a dozen deployment steps with multiple parameters, each of which must executed in a certain order (order is not always clear in the walkthrough), with minimal context provided regarding what each step is doing or how it's doing it.  Perhaps most significantly, the entire walkthrough can require many hours worth of effort and, when mostly deployed, the daily costs are not insignificant if your intention is only to learn this framework for future enterprise use.
 
