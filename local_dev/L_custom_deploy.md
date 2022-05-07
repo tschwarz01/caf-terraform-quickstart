@@ -372,6 +372,7 @@ The interesting piece here is the **resource_group** map within the **storage_ac
 - As we've specified a **lz_key**, we are referencing **landingzone.key** of our **testconfig1** deployment.
 
 Putting that information together, we are declaring that we want this storage account deployed into a resource group managed by a remote Terraform deployment (**test_config1**).  Because we declared a tfstate dependency on **test_config1**, rover & the aztfmod module will work together to bring in all of the resource information contained within the **test_config1** tfstate file.  The resource information will be stored in local variables within our current deployment context.  The module can then reference the properties it needs from the **testconfig1** deployment resource group identified by the key **evh_examples** like this:
+
 `local.combined_objects_resource_groups["test_config1"]["evh_examples"].PROPERTY_NAME`
 
 This configuration can be deployed by executing the following rover command:
