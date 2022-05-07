@@ -1,7 +1,7 @@
 # Foundations
 
 ## The Azure CAF Terraform Solution Components
----
+
 
 ### [Aztfmod Repository](https://github.com/aztfmod/terraform-azurerm-caf)
 - [The Cloud Adoption Framework Terraform Supermodule](https://registry.terraform.io/modules/aztfmod/caf/azurerm/latest)
@@ -28,8 +28,8 @@
 ### [CAF Landing Zones Repository](https://github.com/Azure/caf-terraform-landingzones)
 - Contains full solution accelerators, individual templates, Ansible playbooks and example CICD pipeline configuration tasks.
 
-## Component Interactions
 ---
+## Component Interactions
 
 The Terraform modules, git repositories and CLI utilities outlined above are primarily used in one of two ways.
 
@@ -49,8 +49,8 @@ Use the **CAF Landing Zones** approach:
 - To create, manage and deploy complex multi-deployment configurations.
 - When you have dependencies between discrete Terraform deployments and therefore need access to resource details contained within remote Terraform tfstates.
 
-# Note from author
 ---
+# Note from author
 The reason this guide exists is solely due to the difficulties I personally had trying to absorb all the concepts necessary when using the walkthrough which (attempts to) show you how to deploy the most complex pre-built scenario available in this repository.  There are many Azure & Azure AD high privileged access requirements, over a dozen deployment steps with multiple parameters, each of which must executed in a certain order (order is not always clear in the walkthrough), with minimal context provided regarding what each step is doing or how it's doing it.  Perhaps most significantly, the entire walkthrough can require many hours worth of effort and, when mostly deployed, the daily costs are not insignificant if your intention is only to learn this framework for future enterprise use.
 
 The power of this framework, in my opinion, is in its ability to manage and share state across multiple discrete Terraform deployments, along with the ability to reference both local and remote resource via dictionary key reference.  To that end, I found myself repeatedly asking the same question:  How do I use this framework with as few deployments possible to be able to leverage and demonstrate the state sharing capabilities?
@@ -58,8 +58,8 @@ The power of this framework, in my opinion, is in its ability to manage and shar
 The local development + custom deployment portion of this walkthrough will teach you how to accomplish that goal, and tries to provide important insight into how the framework operates so that you know how to troubleshoot issues when they occur.
 
 
-## Next Steps
 ---
+## Next Steps
 
 Determine if you will be developing Terraform configurations on a local development machine, or if you intend to configure CI/CD pipelines via Azure DevOps or GitHub Actions
 - [**Local Environment Setup**](./local_dev/L_common_prerequisites.md)
