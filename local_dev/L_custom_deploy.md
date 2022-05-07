@@ -424,7 +424,7 @@ To remove **foundations**:
             --environment contoso
 ```
 
-If you intend to follow the more advanced walkthroughs in this tutorial, it is recommended that you leave the launchpad deployment in place in order to save time.  Otherwise, to remove the launchpad:
+If you intend to follow the more advanced walkthroughs in this tutorial, it is recommended that you leave the launchpad deployment in place in order to save time.  Otherwise, to remove the **launchpad**:
 
 ```bash
 /tf/rover/rover.sh -lz /tf/caf/landingzones/caf_launchpad -a apply \
