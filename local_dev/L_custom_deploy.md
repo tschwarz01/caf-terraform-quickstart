@@ -69,7 +69,7 @@ rover logout
 As a last step prior to deploying the **launchpad**, I recommend that you look at the contents of its `configuration.tfvars` file, which can be found at `/tf/caf/landingzones/caf_launchpad/scenario/100/configuration.tfvars`.  Take notice that the **landingzone** map object contains only three properties, none of which is named tfstate.  The significance of this will become more apparent as we move forward.
 
 **landingzone** map object from **launchpad configuration.tfvars**
-```
+```js
 landingzone = {
   backend_type = "azurerm"
   level        = "level0"
@@ -106,7 +106,7 @@ The **foundations** scenario can be found at "`/tf/caf/landingzones/caf_solution
 >  NOTE: No resources are created by this deployment.
 
 **foundations** scenario **landingzone.tfvars**
-```json
+```js
 landingzone = {
   backend_type        = "azurerm"
   global_settings_key = "launchpad"
@@ -155,7 +155,7 @@ If you refer to the documentation related to **levels hierarchy** at https://azt
 ### **"test" deployment** ###
 Beginning with **testconfig1**, create a file named **configuration.tfvars** at "`/tf/caf/configuration/level3/testconfig1/configuration.tfvars`".  Insert the following content:
 
-```json
+```js
 global_settings = {
   default_region = "region1"
   regions = {
@@ -197,7 +197,7 @@ Again, we're working with map objects that define configuration settings or Azur
 Let's step through them one at a time:
 
 **global_settings**
-```json
+```js
 global_settings = {
   default_region = "region1"
   regions = {
@@ -211,7 +211,7 @@ global_settings = {
 This is relatively straight forward.  We are declaring a default region for our resource deployment via its key - **region1**.  The key maps to the region definition in the **regions** map.  In this case, **region1** maps to the region **westus3**.
 
 **landingzone**
-```json
+```js
 landingzone = {
   backend_type        = "azurerm"
   level               = "level1"
@@ -235,7 +235,7 @@ We have a **tfstates** map
 - **caf_launchpad.tfstate** is located in the level below / **lower** than the current configuration.
 
 **resource_groups**
-```json
+```js
 resource_groups = {
   # Default to var.global_settings.default_region. You can overwrite it by setting the attribute region = "region2"
   evh_examples = {
@@ -253,7 +253,7 @@ What is region1?  The aztfmod module knows that we defined our list of potential
 
 Lastly, we have a final map:
 **event_hub_namespaces**
-```json
+```js
 event_hub_namespaces = {
   evh1 = {
     name               = "evh1"
@@ -288,7 +288,7 @@ That's it for our first deployment: **testconfig1**
 Create a file named **configuration.tfvars** at "`/tf/caf/configuration/level3/testconfig2/configuration.tfvars`".  Copy the following code into the file:
 
 **configuration.tfvars**
-```json
+```js
 landingzone = {
   backend_type        = "azurerm"
   level               = "level1"
@@ -323,7 +323,7 @@ storage_accounts = {
 Let's deconstruct:
 
 **landingzone**
-```json
+```js
 landingzone = {
   backend_type        = "azurerm"
   level               = "level1"
@@ -345,7 +345,7 @@ The only changes from our **testconfig1** deployment are:
 - We've defined a new map under tfstates indicating that, in addition to the **launchpad** state, we have dependencies on a state with key of **test_config1**.  If you recall, this corresponds with the **landingzone.key** value we assigned to our **testconfig1** deployment.
 
 **storage_accounts**
-```json
+```js
 storage_accounts = {
   nsgflogs = {
     name                      = "nsglogs"
